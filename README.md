@@ -5,23 +5,28 @@ MERN app where users sign up, log in, add books, and review them. Includes JWT a
 ## Setup
 
 ### Backend
+
 ```
 cd backend
 cp .env.example .env
 npm install
 npm run dev
 ```
+
 Edit `.env` with: `PORT`, `MONGO_URI`, `JWT_SECRET`, `CLIENT_URL=http://localhost:5173`.
 
 ### Frontend
+
 ```
 cd frontend
 npm install
 npm run dev
 ```
+
 Optional: create `frontend/.env` with `VITE_API_BASE=http://localhost:5000/api`.
 
 ## API (Base: /api)
+
 - POST `/auth/signup` { name, email, password } → { token, user }
 - POST `/auth/login` { email, password } → { token, user }
 - GET `/books` ?page&search&genre&sortBy(year|rating)
@@ -34,5 +39,8 @@ Optional: create `frontend/.env` with `VITE_API_BASE=http://localhost:5000/api`.
 - DELETE `/reviews/:id` (auth owner)
 
 ## Notes
+
 - One review per user per book (unique index).
 - Average rating stored on `Book.averageRating` and recalculated on review changes.
+
+# Book-Review-Platform
